@@ -1,6 +1,14 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logoo {
+  width: 30px;
+  position: absolute;
+  right: 25px;
+  top: -15px;
 }
 
 .video-container {
@@ -23,9 +31,37 @@ header {
 }
 
 
+
+
 .hidden {
   opacity: 0;
+  position: relative;
+
 }
+
+
+.sss {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  right: 70px;
+  gap: 15px;
+  display: flex;
+}
+
+.mc {
+  padding-inline-start: 15px;
+}
+
+.logoo {
+  margin-left: 50px;
+}
+
+.Uxarkaca {
+  margin-left: 10px;
+  margin-top: -10px;
+}
+
 
 /* Navigation styles */
 nav ul {
@@ -76,6 +112,7 @@ nav ul li:last-child a::after {
   justify-content: center;
 }
 
+
 .card {
   width: 300px;
   height: 200px;
@@ -123,83 +160,205 @@ nav ul li:last-child a::after {
 .gallery-wrapper {
   display: flex;
   flex-direction: column;
-  /* Stack child elements vertically */
   align-items: center;
-  /* Center the child elements horizontally */
   min-height: 100vh;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* Gallery styling */
-.gallery {
-  width: 100%;
-  /* Full width of the container */
-  display: flex;
-  justify-content: center;
-  /* Center the image containers if they're not full width */
-  margin-bottom: 10px;
-  /* Space between each image container */
+.prohibited-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Basic styling for the container */
+.prohibited-title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.prohibited-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prohibited-item {
+  font-size: 1.2em;
+  color: #666;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.prohibited-item:hover {
+  background: #ff6f61;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .prohibited-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .prohibited-title {
+    font-size: 1.5em;
+  }
+
+  .prohibited-item {
+    font-size: 1em;
+  }
+}
+
+.service-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.service-header {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #ddd;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.region-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.region-card {
+  flex: 1 1 calc(30% - 20px);
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.region-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.region-name {
+  font-size: 1.8em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.region-flag {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.region-details {
+  font-size: 1em;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .region-card {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .sss {
+    display: none;
+  }
+
+  .region-card {
+    flex: 1 1 100%;
+  }
+
+  .service-header {
+    font-size: 2em;
+  }
+
+  .region-name {
+    font-size: 1.5em;
+  }
+
+  .region-details {
+    font-size: 0.9em;
+  }
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 .image-container {
   position: relative;
   width: 100%;
-  /* Full width to stretch across the gallery */
   max-width: 300px;
-  /* Adjust max-width to suit your design */
   height: 200px;
-  /* Fixed height */
   overflow: hidden;
 }
 
-/* Styling and positioning the image */
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures the image covers the available space without distortion */
   transition: transform 0.3s ease-in-out;
 }
 
-/* Styling the overlay */
 .overlay {
   position: absolute;
   bottom: -100%;
-  /* Start from the bottom outside of view */
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  /* Semi-transparent black background */
   color: white;
   transition: bottom 0.3s ease-in-out;
-  /* Smooth transition for the overlay */
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-/* Styling the text inside the overlay */
 .text {
   padding: 20px;
   text-align: center;
 }
 
-/* CSS for the hover effect */
 .image-container:hover .overlay {
   bottom: 0;
-  /* Moves the overlay up to cover the image */
 }
 
-/* Optional: Scale the image a bit when hovering */
 .image-container:hover img {
   transform: scale(1.05);
 }
 
-/* Container for both years and gallery */
 .containersss {
   display: flex;
   flex-wrap: wrap;
@@ -209,30 +368,23 @@ nav ul li:last-child a::after {
 
 
 
-/*
-/* Gallery wrapper */
 .gallery-wrapper {
   flex: 1;
 }
 
-/* Gallery styling */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
 }
 
-/* Basic styling for the image container */
 .image-container {
   position: relative;
   width: calc(33.33% - 10px);
-  /* Adjust width based on number of images */
   height: 200px;
-  /* Fixed height for images */
   overflow: hidden;
 }
 
-/* Styling and positioning the image */
 .image-container img {
   width: 100%;
   height: 100%;
@@ -240,7 +392,6 @@ nav ul li:last-child a::after {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Styling the overlay */
 .overlay {
   position: absolute;
   bottom: -100%;
@@ -255,24 +406,20 @@ nav ul li:last-child a::after {
   height: 100%;
 }
 
-/* Styling the text inside the overlay */
 .text {
   padding: 20px;
   text-align: center;
 }
 
-/* CSS for the hover effect */
 .image-container:hover .overlay {
   bottom: 0;
 }
 
-/* Optional: Scale the image a bit when hovering */
 .image-container:hover img {
   transform: scale(1.05);
 }
 
 
-/* about us */
 
 .about-us {
   padding: 80px 0px;
@@ -357,6 +504,10 @@ nav ul li:last-child a::after {
   transition: all 0.4 ease;
 }
 
+
+
+
+
 /* -------------- */
 .footer {
   background: #000;
@@ -372,6 +523,8 @@ nav ul li:last-child a::after {
   color: gray;
   font-size: 0.8em;
 }
+
+.data-text {}
 
 .footer .row a {
   text-decoration: none;
@@ -397,11 +550,34 @@ nav ul li:last-child a::after {
   margin: 0% 1%;
 }
 
+.num {
+  color: #808080;
+  text-align: left;
+  margin-left: 15px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.mail {
+  text-decoration: none;
+  font-size: 17px;
+  color: #808080
+}
+
+
+
 @media (max-width:720px) {
-  .footer {
+  /* .num {
+    color: #808080;
     text-align: left;
-    padding: 5%;
-  }
+    margin-left: 15px;
+    text-align: left;
+    margin-top: 14px;
+  } */
+
+  /* .footer {
+    text-align: left;    padding: 5%;
+  } */
 
   .footer .row ul li {
     display: block;
@@ -444,22 +620,17 @@ nav ul li:last-child a::after {
     font-size: 25px;
 
     /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
 
     /* Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-    }
 
     header {
       background-color: #333;
       color: #fff;
       padding: 20px;
     }
+
+
 
     nav ul {
       list-style-type: none;
@@ -482,6 +653,8 @@ nav ul li:last-child a::after {
     main {
       padding: 20px;
     }
+
+
 
     .hero {
       text-align: center;

@@ -19,3 +19,9 @@ window.onscroll = function() {
   // Update the previous scroll position
   prevScrollpos = currentScrollPos;
 }
+
+
+function changeImage() {
+  var img = document.getElementById('centerImage');
+  img.src = 'image2.jpg'; // Change the source of the image
+}
